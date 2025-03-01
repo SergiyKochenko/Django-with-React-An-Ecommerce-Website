@@ -33,6 +33,9 @@ The project is organized as follows:
     - `src/pages/`: React components representing different pages.
     - `src/App.js`: Main application component.
     - `src/index.js`: Entry point for the React application.
+    - `src/store.js`: Redux store configuration.
+    - `src/constants/`: Contains constant definitions.
+    - `src/reducers/`: Contains Redux reducers.
 
 ## Backend
 
