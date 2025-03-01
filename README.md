@@ -33,8 +33,10 @@ The project is organized as follows:
       - `src/components/Product.js`: Component to display a product.
       - `src/components/Loader.js`: Component to display a loading spinner.
       - `src/components/Message.js`: Component to display messages.
+      - `src/components/Rating.js`: Component to display product ratings.
     - `src/pages/`: React components representing different pages.
       - `src/pages/HomeScreen.js`: Component for the home page.
+      - `src/pages/ProductScreen.js`: Component for the product details page.
     - `src/actions/`: Contains Redux action creators.
       - `src/actions/productActions.js`: Actions related to product data.
     - `src/constants/`: Contains constant definitions.
@@ -156,8 +158,10 @@ The frontend is built with React and includes the following main components:
     - `src/components/Product.js`: Component to display a product.
     - `src/components/Loader.js`: Component to display a loading spinner.
     - `src/components/Message.js`: Component to display messages.
+    - `src/components/Rating.js`: Component to display product ratings.
   - `src/pages/`: React components representing different pages.
     - `src/pages/HomeScreen.js`: Component for the home page.
+    - `src/pages/ProductScreen.js`: Component for the product details page.
   - `src/actions/`: Contains Redux action creators.
     - `src/actions/productActions.js`: Actions related to product data.
   - `src/constants/`: Contains constant definitions.
