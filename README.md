@@ -16,6 +16,7 @@ The project is organized as follows:
   - `base/views.py`: Views for handling requests.
   - `base/serializers.py`: Serializers for converting data.
   - `base/urls.py`: URL routing for the app.
+  - `base/products.py`: Sample product data.
 - `frontend/`: Contains the React application.
   - `public/`: Contains static files and the main HTML file.
   - `src/`: Contains the React components and main application logic.
@@ -30,6 +31,16 @@ The backend is built with Django and includes the following main components:
 
 - `backend/`: Contains the main Django project files.
 - `base/`: Contains the Django app with models, views, and other components.
+
+### Models
+
+The following models are defined in the `base/models.py` file:
+
+- `Product`: Represents a product in the ecommerce store.
+- `Review`: Represents a review for a product.
+- `Order`: Represents an order placed by a user.
+- `OrderItem`: Represents an item in an order.
+- `ShippingAddress`: Represents the shipping address for an order.
 
 ### Running the Backend
 
