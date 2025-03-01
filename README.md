@@ -4,10 +4,25 @@ This is a full-stack ecommerce application built with Django for the backend and
 
 ## Project Structure
 
+The project is organized as follows:
 
-
-
-
+- `backend/`: Contains the main Django project files.
+  - `backend/settings.py`: Django settings for the project.
+  - `backend/urls.py`: URL routing for the project.
+  - `backend/wsgi.py`: WSGI configuration for deployment.
+  - `manage.py`: Command-line utility for administrative tasks.
+- `base/`: Contains the Django app with models, views, and other components.
+  - `base/models.py`: Database models.
+  - `base/views.py`: Views for handling requests.
+  - `base/serializers.py`: Serializers for converting data.
+  - `base/urls.py`: URL routing for the app.
+- `frontend/`: Contains the React application.
+  - `public/`: Contains static files and the main HTML file.
+  - `src/`: Contains the React components and main application logic.
+    - `src/components/`: Reusable React components.
+    - `src/pages/`: React components representing different pages.
+    - `src/App.js`: Main application component.
+    - `src/index.js`: Entry point for the React application.
 
 ## Backend
 
@@ -88,7 +103,7 @@ The frontend is built with React and includes the following main components:
 
 ### Available Scripts
 
-In the [frontend](http://_vscodecontentref_/1) directory, you can run:
+In the `frontend` directory, you can run:
 
 - `npm start`: Runs the app in development mode.
 - `npm test`: Launches the test runner.
@@ -97,7 +112,7 @@ In the [frontend](http://_vscodecontentref_/1) directory, you can run:
 
 ### Running the Frontend
 
-1. Navigate to the [frontend](http://_vscodecontentref_/2) directory:
+1. Navigate to the `frontend` directory:
     ```sh
     cd frontend
     ```
