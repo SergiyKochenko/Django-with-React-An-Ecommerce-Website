@@ -51,6 +51,10 @@ The following models are defined in the `base/models.py` file:
 - `OrderItem`: Represents an item in an order.
 - `ShippingAddress`: Represents the shipping address for an order.
 
+### Image Uploads
+
+The `Product` model includes an `ImageField` for handling image uploads. Images are stored in the `static/images` directory.
+
 ### Running the Backend
 
 1. Create a virtual environment and activate it:
