@@ -55,6 +55,14 @@ The following models are defined in the `base/models.py` file:
 
 The `Product` model includes an `ImageField` for handling image uploads. Images are stored in the `static/images` directory.
 
+### Views
+
+The following views are defined in the `base/views.py` file:
+
+- `getRouters`: Returns a list of available API routes.
+- `getProducts`: Returns a list of all products.
+- `getProduct`: Returns details of a single product.
+
 ### Running the Backend
 
 1. Create a virtual environment and activate it:
