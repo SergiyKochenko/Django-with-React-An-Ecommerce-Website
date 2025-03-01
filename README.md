@@ -30,13 +30,20 @@ The project is organized as follows:
       - `public/images/laptop.jpg`: Image for Dell XPS 13 Laptop.
   - `src/`: Contains the React components and main application logic.
     - `src/components/`: Reusable React components.
+      - `src/components/Product.js`: Component to display a product.
+      - `src/components/Loader.js`: Component to display a loading spinner.
+      - `src/components/Message.js`: Component to display messages.
     - `src/pages/`: React components representing different pages.
+      - `src/pages/HomeScreen.js`: Component for the home page.
+    - `src/actions/`: Contains Redux action creators.
+      - `src/actions/productActions.js`: Actions related to product data.
+    - `src/constants/`: Contains constant definitions.
+      - `src/constants/productConstants.js`: Constants for product actions.
+    - `src/reducers/`: Contains Redux reducers.
+      - `src/reducers/productReducers.js`: Reducers for product data.
+    - `src/store.js`: Redux store configuration.
     - `src/App.js`: Main application component.
     - `src/index.js`: Entry point for the React application.
-    - `src/store.js`: Redux store configuration.
-    - `src/constants/`: Contains constant definitions.
-    - `src/reducers/`: Contains Redux reducers.
-    - `src/actions/`: Contains Redux action creators.
 
 ## Backend
 
@@ -145,6 +152,21 @@ The frontend is built with React and includes the following main components:
     - `public/images/galaxy.jpg`: Image for Samsung Galaxy S21 Ultra.
     - `public/images/laptop.jpg`: Image for Dell XPS 13 Laptop.
 - `src/`: Contains the React components and main application logic.
+  - `src/components/`: Reusable React components.
+    - `src/components/Product.js`: Component to display a product.
+    - `src/components/Loader.js`: Component to display a loading spinner.
+    - `src/components/Message.js`: Component to display messages.
+  - `src/pages/`: React components representing different pages.
+    - `src/pages/HomeScreen.js`: Component for the home page.
+  - `src/actions/`: Contains Redux action creators.
+    - `src/actions/productActions.js`: Actions related to product data.
+  - `src/constants/`: Contains constant definitions.
+    - `src/constants/productConstants.js`: Constants for product actions.
+  - `src/reducers/`: Contains Redux reducers.
+    - `src/reducers/productReducers.js`: Reducers for product data.
+  - `src/store.js`: Redux store configuration.
+  - `src/App.js`: Main application component.
+  - `src/index.js`: Entry point for the React application.
 
 ### Available Scripts
 
