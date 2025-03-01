@@ -19,6 +19,15 @@ The project is organized as follows:
   - `base/products.py`: Sample product data.
 - `frontend/`: Contains the React application.
   - `public/`: Contains static files and the main HTML file.
+    - `public/images/`: Contains images used in the application.
+      - `public/images/airpods.jpg`: Image for Airpods Wireless Bluetooth Headphones.
+      - `public/images/phone.jpg`: Image for iPhone 11 Pro 256GB Memory.
+      - `public/images/camera.jpg`: Image for Cannon EOS 80D DSLR Camera.
+      - `public/images/playstation.jpg`: Image for Sony Playstation 4 Pro White Version.
+      - `public/images/mouse.jpg`: Image for Logitech G-Series Gaming Mouse.
+      - `public/images/alexa.jpg`: Image for Amazon Echo Dot 3rd Generation.
+      - `public/images/galaxy.jpg`: Image for Samsung Galaxy S21 Ultra.
+      - `public/images/laptop.jpg`: Image for Dell XPS 13 Laptop.
   - `src/`: Contains the React components and main application logic.
     - `src/components/`: Reusable React components.
     - `src/pages/`: React components representing different pages.
@@ -110,6 +119,15 @@ The following models are defined in the `base/models.py` file:
 The frontend is built with React and includes the following main components:
 
 - `public/`: Contains static files and the main HTML file.
+  - `public/images/`: Contains images used in the application.
+    - `public/images/airpods.jpg`: Image for Airpods Wireless Bluetooth Headphones.
+    - `public/images/phone.jpg`: Image for iPhone 11 Pro 256GB Memory.
+    - `public/images/camera.jpg`: Image for Cannon EOS 80D DSLR Camera.
+    - `public/images/playstation.jpg`: Image for Sony Playstation 4 Pro White Version.
+    - `public/images/mouse.jpg`: Image for Logitech G-Series Gaming Mouse.
+    - `public/images/alexa.jpg`: Image for Amazon Echo Dot 3rd Generation.
+    - `public/images/galaxy.jpg`: Image for Samsung Galaxy S21 Ultra.
+    - `public/images/laptop.jpg`: Image for Dell XPS 13 Laptop.
 - `src/`: Contains the React components and main application logic.
 
 ### Available Scripts
