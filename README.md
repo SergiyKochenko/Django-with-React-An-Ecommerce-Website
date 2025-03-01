@@ -36,6 +36,7 @@ The project is organized as follows:
     - `src/store.js`: Redux store configuration.
     - `src/constants/`: Contains constant definitions.
     - `src/reducers/`: Contains Redux reducers.
+    - `src/actions/`: Contains Redux action creators.
 
 ## Backend
 
