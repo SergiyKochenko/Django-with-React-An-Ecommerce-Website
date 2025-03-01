@@ -132,11 +132,18 @@ The following views are defined in the `base/views.py` file:
     ```sh
     pip install djangorestframework
     pip install django-cors-headers
+    pip install pillow
     ```
 
 8. Create a superuser:
     ```sh
     python manage.py createsuperuser
+    ```
+
+9. Make migrations and migrate the database:
+    ```sh
+    python manage.py makemigrations
+    python manage.py migrate
     ```
 
 ## Frontend
@@ -213,6 +220,11 @@ In the `frontend` directory, you can run:
 3. Install Axios:
     ```sh
     npm install axios
+    ```
+
+4. Install Redux and related dependencies:
+    ```sh
+    npm install redux react-redux redux-thunk redux-devtools-extension --legacy-peer-deps
     ```
 
 ## Learn More
