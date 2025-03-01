@@ -77,5 +77,31 @@ products = [
     'rating': 4,
     'numReviews': 12,
   },
+  {
+    '_id': '7',
+    'name': 'Samsung Galaxy S21 Ultra',
+    'image': '/images/galaxy.jpg',
+    'description':
+      'The Samsung Galaxy S21 Ultra features a 108MP camera, 100x Space Zoom, and a 6.8-inch Dynamic AMOLED display.',
+    'brand': 'Samsung',
+    'category': 'Electronics',
+    'price': 1199.99,
+    'countInStock': 15,
+    'rating': 4.8,
+    'numReviews': 20,
+  },
+  {
+    '_id': '8',
+    'name': 'Dell XPS 13 Laptop',
+    'image': '/images/laptop.jpg',
+    'description':
+      'The Dell XPS 13 features a 13.4-inch FHD+ display, Intel Core i7 processor, 16GB RAM, and 512GB SSD.',
+    'brand': 'Dell',
+    'category': 'Electronics',
+    'price': 999.99,
+    'countInStock': 8,
+    'rating': 4.6,
+    'numReviews': 15,
+  },
 ]
 
