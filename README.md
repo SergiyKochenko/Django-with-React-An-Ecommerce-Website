@@ -314,6 +314,21 @@ function CartScreen() {
 <Route path='/cart/:id?' element={<CartScreen />} />
 ```
 
+### Added Styling for Shopping Cart Links
+
+- Added CSS styles to remove the underline from shopping cart links and only show underline on hover.
+
+```css
+.cart-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cart-link:hover {
+    text-decoration: underline;
+}
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
