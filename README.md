@@ -290,6 +290,30 @@ const initialState = {
 import { CART_ADD_ITEM } from '../constants/cartConstants'
 ```
 
+### Fixed Navigation Error in CartScreen
+
+- Replaced the usage of `match` and `location` with `useParams`, `useLocation`, and `useNavigate` from `react-router-dom` in the `CartScreen` component to fix the runtime error.
+
+```javascript
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
+
+function CartScreen() {
+  const { id: productId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+  // ...existing code...
+}
+```
+
+### Updated Route for CartScreen
+
+- Updated the route for `CartScreen` in `App.js` to make the `id` parameter optional.
+
+```javascript
+<Route path='/cart/:id?' element={<CartScreen />} />
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
