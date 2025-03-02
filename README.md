@@ -227,6 +227,32 @@ In the `frontend` directory, you can run:
     npm install redux react-redux redux-thunk redux-devtools-extension --legacy-peer-deps
     ```
 
+## Manual Test of the App
+
+| Category       | Command/Action                                                                 |
+|----------------|-------------------------------------------------------------------------------|
+| Backend Setup  | `pip install virtualenv`                                                      |
+|                | `virtualenv myenv`                                                            |
+|                | `source myenv/Scripts/activate`                                               |
+|                | `pip install django`                                                          |
+|                | `django-admin startproject backend`                                           |
+|                | `python manage.py runserver`                                                  |
+|                | `python manage.py startapp base`                                              |
+|                | `pip install djangorestframework`                                             |
+|                | `pip install django-cors-headers`                                             |
+|                | `pip install pillow`                                                          |
+|                | `python manage.py createsuperuser`                                            |
+|                | `python manage.py makemigrations`                                             |
+|                | `python manage.py migrate`                                                    |
+| Frontend Setup | `npm install react-bootstrap`                                                 |
+|                | `npm install react-router-dom react-router-bootstrap`                         |
+|                | `npm install axios`                                                           |
+|                | `npm install redux react-redux redux-thunk redux-devtools-extension --legacy-peer-deps` |
+|                | `npm start`                                                                   |
+| React Commands | `rfce` (React Functional Component with Export)                               |
+|                | `imp` (Import statement)                                                      |
+|                | `imd` (Import Default)                                                        |
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
