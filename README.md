@@ -268,6 +268,28 @@ function ProductScreen () {
 }
 ```
 
+### Updated Redux Store Configuration
+
+- Updated the `store.js` file to load cart items from local storage into the initial state.
+
+```javascript
+const cartItemsFromStorage = localStorage.getItem('cartItems')
+  ? JSON.parse(localStorage.getItem('cartItems'))
+  : []
+
+const initialState = {
+  cart: { cartItems: cartItemsFromStorage }
+}
+```
+
+### Fixed Import Error in cartReducers.js
+
+- Corrected the import statement in `cartReducers.js` to use the correct constant name `CART_ADD_ITEM`.
+
+```javascript
+import { CART_ADD_ITEM } from '../constants/cartConstants'
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
