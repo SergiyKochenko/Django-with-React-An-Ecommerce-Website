@@ -329,6 +329,16 @@ function CartScreen() {
 }
 ```
 
+### Added Remove from Cart Functionality
+
+- Added functionality to remove items from the cart in the `CartScreen` component.
+
+```javascript
+const removeFromCartHandler = (id) => {
+  dispatch(removeFromCart(id))
+}
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
