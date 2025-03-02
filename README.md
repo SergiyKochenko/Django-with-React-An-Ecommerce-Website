@@ -248,6 +248,26 @@ This section has moved here: <a href="https://facebook.github.io/create-react-ap
 |                | `imp` (Import statement)                                                      |
 |                | `imd` (Import Default)                                                        |
 
+## Recent Updates
+
+### Fixed Navigation Error in ProductScreen
+
+- Replaced the usage of `history` with `useNavigate` from `react-router-dom` in the `ProductScreen` component to fix the runtime error when pressing the "Add to Cart" button.
+
+```javascript
+import { useNavigate } from 'react-router-dom';
+
+function ProductScreen () {
+  // ...existing code...
+  const navigate = useNavigate();
+  // ...existing code...
+  const addToCartHandler = () => {
+    navigate(`/cart/${id}?qty=${qty}`);
+  };
+  // ...existing code...
+}
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
