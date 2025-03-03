@@ -236,6 +236,7 @@ This section has moved here: <a href="https://facebook.github.io/create-react-ap
 |                | `pip install djangorestframework`                                             |
 |                | `pip install django-cors-headers`                                             |
 |                | `pip install pillow`                                                          |
+|                | pip install djangorestframework-simplejwt                                     |
 |                | `python manage.py createsuperuser`                                            |
 |                | `python manage.py makemigrations`                                             |
 |                | `python manage.py migrate`                                                    |
@@ -337,6 +338,22 @@ function CartScreen() {
 const removeFromCartHandler = (id) => {
   dispatch(removeFromCart(id))
 }
+```
+
+### Installed djangorestframework-simplejwt
+
+- Installed `djangorestframework-simplejwt` for JWT authentication in the Django backend.
+
+```sh
+pip install djangorestframework-simplejwt
+```
+
+### Using Postman for Testing
+
+- Use Postman to test the API endpoints. Postman is a popular tool for testing APIs.
+
+```sh
+# Install Postman from https://www.postman.com/downloads/
 ```
 
 ## Learn More
