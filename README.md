@@ -236,7 +236,7 @@ This section has moved here: <a href="https://facebook.github.io/create-react-ap
 |                | `pip install djangorestframework`                                             |
 |                | `pip install django-cors-headers`                                             |
 |                | `pip install pillow`                                                          |
-|                | pip install djangorestframework-simplejwt                                     |
+|                | `pip install djangorestframework-simplejwt`                                   |
 |                | `python manage.py createsuperuser`                                            |
 |                | `python manage.py makemigrations`                                             |
 |                | `python manage.py migrate`                                                    |
