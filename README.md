@@ -356,6 +356,63 @@ pip install djangorestframework-simplejwt
 # Install Postman from https://www.postman.com/downloads/
 ```
 
+### Updated UserSerializer
+
+- Updated the `UserSerializer` to include additional fields and added `UserSerializerWithToken` for JWT authentication.
+
+```python
+class UserSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField(read_only=True)
+    _id = serializers.SerializerMethodField(read_only=True)
+    isAdmin = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = User
+        fields = ["id", "_id", "username", "email", "name", "isAdmin"]
+
+    def get__id(self, obj):
+        return obj.id
+
+    def get_isAdmin(self, obj):
+        return obj.is_staff
+
+    def get_name(self, obj):
+        name = obj.first_name
+        if name == "":
+            name = obj.email
+        return name
+
+class UserSerializerWithToken(UserSerializer):
+    token = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = User
+        fields = ["id", "_id", "username", "email", "name", "isAdmin", "token"]
+
+    def get_token(self, obj):
+        token = RefreshToken.for_user(obj)
+        return str(token)
+```
+
+### Updated Views for JWT Authentication
+
+- Updated the views to use `UserSerializerWithToken` for JWT authentication.
+
+```python
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        serializer = UserSerializerWithToken(self.user).data
+        for k, v in serializer.items():
+            data[k] = v
+
+        return data
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+```
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
