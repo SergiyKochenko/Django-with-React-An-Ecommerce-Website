@@ -408,7 +408,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
 
-        serializer = UserSerializerWithToken(self.user).data
+        serializer = UserSerializerWithToken(this.user).data
         for k, v in serializer.items():
             data[k] = v
 
@@ -447,6 +447,97 @@ def getUserProfile(request):
     user = request.user
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
+```
+
+### Fixed Navigation Error in LoginScreen
+
+- Replaced the usage of `history` with `useNavigate` from `react-router-dom` in the `LoginScreen` component to fix the runtime error when navigating after login.
+
+```javascript
+import { useNavigate } from 'react-router-dom';
+
+function LoginScreen() {
+  // ...existing code...
+  const navigate = useNavigate();
+  // ...existing code...
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirectPath);
+    }
+  }, [navigate, userInfo, redirectPath]);
+  // ...existing code...
+}
+```
+
+### Added Error and Loading States in LoginScreen
+
+- Added error and loading states to the `LoginScreen` component to display appropriate messages and loaders during the login process.
+
+```javascript
+import Loader from '../components/Loader';
+import Message from '../components/Message';
+
+function LoginScreen() {
+  // ...existing code...
+  const { error, loading, userInfo } = userLogin;
+  // ...existing code...
+  return (
+    <FormContainer>
+      <h1>Sign In</h1>
+      {error && <Message variant='danger'>{error}</Message>}
+      {loading && <Loader />}
+      // ...existing code...
+    </FormContainer>
+  );
+}
+```
+
+### Updated Redux Action for User Login
+
+- Updated the `login` action in `userActions.js` to handle user login and store user information in local storage.
+
+```javascript
+import axios from 'axios';
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL } from '../constants/userConstants';
+
+export const login = (email, password) => async (dispatch) => {
+  try {
+    dispatch({ type: USER_LOGIN_REQUEST });
+
+    const config = { headers: { 'Content-type': 'application/json' } };
+
+    const { data } = await axios.post('/api/users/login', { username: email, password }, config);
+
+    dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
+
+    localStorage.setItem('userInfo', JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: USER_LOGIN_FAIL,
+      payload: error.response && error.response.data.detail ? error.response.data.detail : error.message,
+    });
+  }
+};
+```
+
+### Updated README Structure
+
+- Updated the README file to include recent updates and improvements made to the project.
+
+```markdown
+## Recent Updates
+
+### Fixed Navigation Error in LoginScreen
+
+- Replaced the usage of `history` with `useNavigate` from `react-router-dom` in the `LoginScreen` component to fix the runtime error when navigating after login.
+
+### Added Error and Loading States in LoginScreen
+
+- Added error and loading states to the `LoginScreen` component to display appropriate messages and loaders during the login process.
+
+### Updated Redux Action for User Login
+
+- Updated the `login` action in `userActions.js` to handle user login and store user information in local storage.
 ```
 
 ## Learn More
