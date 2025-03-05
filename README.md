@@ -2,6 +2,36 @@
 
 This is a full-stack ecommerce application built with Django for the backend and React for the frontend.
 
+## Table of Contents
+
+- [Ecommerce](#ecommerce)
+  - [Table of Contents](#table-of-contents)
+  - [Project Structure](#project-structure)
+  - [Backend](#backend)
+    - [Models](#models)
+    - [Image Uploads](#image-uploads)
+    - [Views](#views)
+    - [Running the Backend](#running-the-backend)
+    - [Additional Backend Setup](#additional-backend-setup)
+  - [Frontend](#frontend)
+    - [Getting Started with Create React App](#getting-started-with-create-react-app)
+    - [Available Scripts](#available-scripts)
+  - [Manual Test of the App](#manual-test-of-the-app)
+  - [Recent Updates](#recent-updates)
+    - [Fixed Navigation Error in ProductScreen](#fixed-navigation-error-in-productscreen)
+    - [Updated Redux Store Configuration](#updated-redux-store-configuration)
+    - [Fixed Import Error in cartReducers.js](#fixed-import-error-in-cartreducersjs)
+    - [Fixed Navigation Error in CartScreen](#fixed-navigation-error-in-cartscreen)
+    - [Updated Route for CartScreen](#updated-route-for-cartscreen)
+    - [Added Styling for Shopping Cart Links](#added-styling-for-shopping-cart-links)
+    - [Added Remove from Cart Functionality](#added-remove-from-cart-functionality)
+    - [Installed djangorestframework-simplejwt](#installed-djangorestframework-simplejwt)
+    - [Using Postman for Testing](#using-postman-for-testing)
+    - [Updated UserSerializer](#updated-userserializer)
+    - [Updated Views for JWT Authentication](#updated-views-for-jwt-authentication)
+  - [Learn More](#learn-more)
+  - [License](#license)
+
 ## Project Structure
 
 The project is organized as follows:
@@ -50,9 +80,6 @@ The project is organized as follows:
 ## Backend
 
 The backend is built with Django and includes the following main components:
-
-- `backend/`: Contains the main Django project files.
-- `base/`: Contains the Django app with models, views, and other components.
 
 ### Models
 
@@ -150,35 +177,6 @@ The following views are defined in the `base/views.py` file:
 
 The frontend is built with React and includes the following main components:
 
-- `public/`: Contains static files and the main HTML file.
-  - `public/images/`: Contains images used in the application.
-    - `public/images/airpods.jpg`: Image for Airpods Wireless Bluetooth Headphones.
-    - `public/images/phone.jpg`: Image for iPhone 11 Pro 256GB Memory.
-    - `public/images/camera.jpg`: Image for Cannon EOS 80D DSLR Camera.
-    - `public/images/playstation.jpg`: Image for Sony Playstation 4 Pro White Version.
-    - `public/images/mouse.jpg`: Image for Logitech G-Series Gaming Mouse.
-    - `public/images/alexa.jpg`: Image for Amazon Echo Dot 3rd Generation.
-    - `public/images/galaxy.jpg`: Image for Samsung Galaxy S21 Ultra.
-    - `public/images/laptop.jpg`: Image for Dell XPS 13 Laptop.
-- `src/`: Contains the React components and main application logic.
-  - `src/components/`: Reusable React components.
-    - `src/components/Product.js`: Component to display a product.
-    - `src/components/Loader.js`: Component to display a loading spinner.
-    - `src/components/Message.js`: Component to display messages.
-    - `src/components/Rating.js`: Component to display product ratings.
-  - `src/pages/`: React components representing different pages.
-    - `src/pages/HomeScreen.js`: Component for the home page.
-    - `src/pages/ProductScreen.js`: Component for the product details page.
-  - `src/actions/`: Contains Redux action creators.
-    - `src/actions/productActions.js`: Actions related to product data.
-  - `src/constants/`: Contains constant definitions.
-    - `src/constants/productConstants.js`: Constants for product actions.
-  - `src/reducers/`: Contains Redux reducers.
-    - `src/reducers/productReducers.js`: Reducers for product data.
-  - `src/store.js`: Redux store configuration.
-  - `src/App.js`: Main application component.
-  - `src/index.js`: Entry point for the React application.
-
 ### Getting Started with Create React App
 
 This project was bootstrapped with <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>.
@@ -191,36 +189,6 @@ In the project directory, you can run:
 - <a href="https://facebook.github.io/create-react-app/docs/running-tests" target="_blank">`npm test`</a>: Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 - <a href="https://facebook.github.io/create-react-app/docs/deployment" target="_blank">`npm run build`</a>: Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app is ready to be deployed! See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 - <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration" target="_blank">`npm run eject`</a>: **Note: this is a one-way operation. Once you `eject`, you can't go back!** If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project. Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own. You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-### Learn More
-
-You can learn more in the <a href="https://facebook.github.io/create-react-app/docs/getting-started" target="_blank">Create React App documentation</a>.
-
-To learn React, check out the <a href="https://reactjs.org/" target="_blank">React documentation</a>.
-
-### Code Splitting
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/code-splitting" target="_blank">https://facebook.github.io/create-react-app/docs/code-splitting</a>
-
-### Analyzing the Bundle Size
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size" target="_blank">https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size</a>
-
-### Making a Progressive Web App
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app" target="_blank">https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app</a>
-
-### Advanced Configuration
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration" target="_blank">https://facebook.github.io/create-react-app/docs/advanced-configuration</a>
-
-### Deployment
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/deployment" target="_blank">https://facebook.github.io/create-react-app/docs/deployment</a>
-
-### `npm run build` fails to minify
-
-This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify" target="_blank">https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify</a>
 
 ## Manual Test of the App
 
