@@ -550,6 +550,7 @@ export const login = (email, password) => async (dispatch) => {
 - Disabled the bootstrap source map warning in the frontend by adding an `// eslint-disable-next-line` comment above the bootstrap CSS import.
 - Added a registration screen and updated the routing to include it.
 - Implemented logout functionality in the Header which removes user info from local storage and dispatches the logout action.
+- Added ProfileScreen component to display user profile and update user details.
 
 ## Learn More
 
