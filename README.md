@@ -546,6 +546,10 @@ export const login = (email, password) => async (dispatch) => {
 - Integrated logout functionality using Redux dispatch.
 - Adjusted the routing implementation to be compatible with react-router-dom v6.
 - Replaced deprecated usage of LinkContainer in favor of React Bootstrap's `as={Link}` prop where necessary.
+- Fixed the user registration endpoint by ensuring the registration URL includes a trailing slash (`/api/users/register/`) to avoid POST redirection errors.
+- Disabled the bootstrap source map warning in the frontend by adding an `// eslint-disable-next-line` comment above the bootstrap CSS import.
+- Added a registration screen and updated the app to include it in the routing.
+- Implemented logout functionality in the header, which removes user info from local storage and updates the Redux store.
 
 ## Learn More
 
