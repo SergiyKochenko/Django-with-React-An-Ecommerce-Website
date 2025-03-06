@@ -540,6 +540,13 @@ export const login = (email, password) => async (dispatch) => {
 - Updated the `login` action in `userActions.js` to handle user login and store user information in local storage.
 ```
 
+## Recent Updates
+
+- Updated the Header component to display a user dropdown with **Profile** and **Logout** options.
+- Integrated logout functionality using Redux dispatch.
+- Adjusted the routing implementation to be compatible with react-router-dom v6.
+- Replaced deprecated usage of LinkContainer in favor of React Bootstrap's `as={Link}` prop where necessary.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
