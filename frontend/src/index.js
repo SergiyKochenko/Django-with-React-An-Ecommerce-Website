@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import store from './store'
 
 import './index.css'
+// eslint-disable-next-line
 import './bootstrap.min.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
