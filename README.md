@@ -569,6 +569,17 @@ export const login = (email, password) => async (dispatch) => {
 - **General Routing & State Management Updates:**  
   Updated navigation functions to use `useNavigate` from React Router v6, and refined Redux integration across authentication and profile update flows.
 
+## Recent Updates
+
+- **Cart Reducer State Mutation Fix:**  
+  Updated the cart reducer to avoid direct state mutations. Now, when items are added or removed, the state is updated immutably and derived values (e.g., itemsPrice) are computed from a new array, ensuring correct behavior and adherence to Redux best practices.
+
+- **Navigation & Routing Enhancements:**  
+  Refined the use of `useNavigate` in components such as ShippingScreen and CartScreen by consolidating the Router setup in `index.js` and eliminating duplicate Router wrappers.
+
+- **CheckoutSteps Component Update:**  
+  Replaced usage of `LinkContainer` with React Bootstrap's `Nav.Link as={Link}` to ensure correct navigation within the app's single Router context.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
