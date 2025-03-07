@@ -64,7 +64,7 @@ function PlaceOrderScreen() {
                                                 </Col>
 
                                                 <Col>
-                                                    <Link to={`/product/${item.product}`}>
+                                                    <Link to={`/product/${item.product}`} className='cart-link'>
                                                         {item.name}
                                                     </Link>
                                                 </Col>
