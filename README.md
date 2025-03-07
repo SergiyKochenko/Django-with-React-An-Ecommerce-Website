@@ -580,6 +580,11 @@ export const login = (email, password) => async (dispatch) => {
 - **CheckoutSteps Component Update:**  
   Replaced usage of `LinkContainer` with React Bootstrap's `Nav.Link as={Link}` to ensure correct navigation within the app's single Router context.
 
+## Recent Updates
+
+- **Fixed State Mutation in PlaceOrderScreen:**
+  - Updated the `PlaceOrderScreen` component to calculate `itemsPrice`, `shippingPrice`, `taxPrice`, and `totalPrice` without directly mutating the Redux store's state. This fix ensures that the state is not mutated directly, preventing the uncaught runtime error.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
