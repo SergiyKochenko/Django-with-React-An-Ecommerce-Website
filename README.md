@@ -555,6 +555,20 @@ export const login = (email, password) => async (dispatch) => {
   • Integrated the update profile action so that when a user updates their details (name, email, password) the  profile is refreshed.  
   • Implemented a reset (`USER_UPDATE_PROFILE_RESET`) after a successful update
 
+## Recent Updates
+
+- **CheckoutSteps Navigation Fix:**  
+  Replaced `LinkContainer` with `Nav.Link` using the `as={Link}` prop in the `CheckoutSteps` component to ensure proper routing within the single `<Router>` context.
+
+- **Router Consolidation:**  
+  Removed the extra `<Router>` wrapper from `App.js` and ensured that the app is wrapped only once in `index.js`.
+
+- **PaymentScreen Integration:**  
+  Added a new route for `PaymentScreen` in `App.js` and updated navigation in the shipping and cart screens accordingly.
+
+- **General Routing & State Management Updates:**  
+  Updated navigation functions to use `useNavigate` from React Router v6, and refined Redux integration across authentication and profile update flows.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
