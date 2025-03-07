@@ -10,7 +10,7 @@ function CartScreen() {
   const location = useLocation()
   const navigate = useNavigate()
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
- 
+
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart)
@@ -27,7 +27,7 @@ function CartScreen() {
   }
 
   const checkoutHandler = () => {
-    navigate('/login?redirect=shipping')
+    navigate('/login?redirect=/shipping')
   }
 
   return (
@@ -57,7 +57,7 @@ function CartScreen() {
                       <Form.Control
                           as='select'
                           value={item.qty}
-                          onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))}>
+                          onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))} >
                           {[...Array(item.countInStock).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>{x + 1}</option>
                           ))}
@@ -67,7 +67,7 @@ function CartScreen() {
                           <Button 
                               type='button' 
                               variant='light' 
-                              onClick={() => removeFromCartHandler(item.product)}>
+                              onClick={() => removeFromCartHandler(item.product)} >
                             <i className='fas fa-trash'></i>
                           </Button>
                       </Col>
@@ -89,7 +89,7 @@ function CartScreen() {
                 type='button' 
                 className='btn-block' 
                 disabled={cartItems.length === 0}
-                onClick={checkoutHandler}>
+                onClick={checkoutHandler} >
                 Proceed To Checkout
               </Button>
             </ListGroup.Item>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
+import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../actions/cartActions'
 
 function ShippingScreen() {
@@ -20,11 +21,12 @@ function ShippingScreen() {
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    navigate('/payment')  // navigate to /payment after saving shipping address
+    navigate('/payment') 
   }
 
   return (
     <FormContainer>
+      <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
