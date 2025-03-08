@@ -253,7 +253,7 @@ This section has moved here: <a href="https://facebook.github.io/create-react-ap
 
 ### Fixed Navigation Error in ProductScreen
 
-- Replaced the usage of `history` with `useNavigate` from `react-router-dom` in the `ProductScreen` component to fix the runtime error when pressing the "Add to Cart" button.
+-   Replaced the usage of `history` with `useNavigate` from `react-router-dom` in the `ProductScreen` component to fix the runtime error when pressing the "Add to Cart" button.
 
 ```javascript
 import { useNavigate } from 'react-router-dom';
@@ -557,11 +557,28 @@ export const login = (email, password) => async (dispatch) => {
 
 ## Recent Updates
 
+- **Fixed Navigation Errors:**
+  - Replaced deprecated usage of `history` with `useNavigate` in components such as ProductScreen and LoginScreen.
+  - Updated CartScreen to use `useParams`, `useLocation`, and `useNavigate` for smoother navigation.
+
+- **Router Consolidation & CheckoutSteps Update:**
+  - Ensured the app is wrapped by a single `<Router>` in `index.js`.
+  - Replaced `LinkContainer` with React Bootstrap's `Nav.Link as={Link}` in the CheckoutSteps component for proper routing.
+
+- **PaymentScreen & Order Flow Integration:**
+  - Added routes for PaymentScreen and PlaceOrderScreen in the main App.
+  - Updated PlaceOrderScreen to compute order summary (items, shipping, tax, total) without directly mutating the Redux store’s state, preventing runtime mutation errors.
+
+- **Redux Store & Cart Reducer Enhancements:**
+  - Configured the Redux store to preload state from local storage.
+  - Refined the cart reducer to update state immutably and derive calculated values correctly.
+
+- **User Authentication & Profile Improvements:**
+  - Improved login, registration, and profile update flows with error/loading state management.
+  - Updated JWT authentication implementation using djangorestframework-simplejwt.
+
 - **CheckoutSteps Navigation Fix:**  
   Replaced `LinkContainer` with `Nav.Link` using the `as={Link}` prop in the `CheckoutSteps` component to ensure proper routing within the single `<Router>` context.
-
-- **Router Consolidation:**  
-  Removed the extra `<Router>` wrapper from `App.js` and ensured that the app is wrapped only once in `index.js`.
 
 - **PaymentScreen Integration:**  
   Added a new route for `PaymentScreen` in `App.js` and updated navigation in the shipping and cart screens accordingly.
