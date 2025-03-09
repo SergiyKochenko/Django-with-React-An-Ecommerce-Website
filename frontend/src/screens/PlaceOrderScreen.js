@@ -16,10 +16,10 @@ function PlaceOrderScreen() {
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
 
-    const itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
-    const shippingPrice = (itemsPrice > 100 ? 0 : 10).toFixed(2)
+    const itemsPrice = Number(cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2))
+    const shippingPrice = Number((itemsPrice > 100 ? 0 : 10).toFixed(2))
     const taxPrice = Number((0.082 * itemsPrice).toFixed(2))
-    const totalPrice = (Number(itemsPrice) + Number(shippingPrice) + Number(taxPrice)).toFixed(2)
+    const totalPrice = Number((itemsPrice + shippingPrice + taxPrice).toFixed(2))
 
     useEffect(() => {
         if (!cart.paymentMethod) {
@@ -153,7 +153,7 @@ function PlaceOrderScreen() {
                                 <Button
                                     type='button'
                                     className='btn-block'
-                                    disabled={cart.cartItems === 0}
+                                    disabled={cart.cartItems.length === 0}
                                     onClick={placeOrder}
                                 >
                                     Place Order
@@ -166,5 +166,8 @@ function PlaceOrderScreen() {
         </div>
     )
 }
+
+
+
 
 export default PlaceOrderScreen
