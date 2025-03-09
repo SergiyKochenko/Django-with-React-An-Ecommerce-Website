@@ -612,6 +612,11 @@ export const login = (email, password) => async (dispatch) => {
 
 - **Order Endpoints and OrderScreen Integration:** Updated backend order URL patterns and views for improved error handling and status updates, and enhanced the OrderScreen component to display user shipping details and payment/delivery statuses.
 
+## Recent Work
+- Updated order actions to handle create, details, and payment flows.
+- Modified order reducers to process order creation, details, and payment states.
+- Integrated order reducers into the Redux store configuration.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
