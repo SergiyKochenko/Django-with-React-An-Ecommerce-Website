@@ -58,7 +58,7 @@ function CartScreen() {
                           as='select'
                           value={item.qty}
                           onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))} >
-                          {[...Array(item.countInStock).keys()].map((x) => (
+                          {[...Array(Math.max(0, item.countInStock)).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>{x + 1}</option>
                           ))}
                       </Form.Control>
