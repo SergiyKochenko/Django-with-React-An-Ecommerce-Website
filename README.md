@@ -613,6 +613,12 @@ export const login = (email, password) => async (dispatch) => {
 - **Order Endpoints and OrderScreen Integration:** Updated backend order URL patterns and views for improved error handling and status updates, and enhanced the OrderScreen component to display user shipping details and payment/delivery statuses.
 
 ## Recent Work
+- Integrated PayPal payment buttons into the OrderScreen component.
+- Added "Powered by PayPal" logo under the Debit or Credit Card button.
+- Updated order actions, reducers, and store configuration to handle order creation, details, and payment flows.
+- Ensured proper state management and error handling for PayPal SDK loading.
+
+## Recent Work
 - Updated order actions to handle create, details, and payment flows.
 - Modified order reducers to process order creation, details, and payment states.
 - Integrated order reducers into the Redux store configuration.
