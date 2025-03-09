@@ -604,6 +604,10 @@ export const login = (email, password) => async (dispatch) => {
 
 - **Last Job Done:** Streamlined navigation and state management by updating routing to use react-router-dom v6 hooks, refining Redux store initialization with local storage preloading, and enhancing error/loading states in authentication.
 
+## Recent Updates
+
+- **OrderScreen Enhancements:** Added user name and email in the Shipping section and included status messages for delivery and payment in OrderScreen.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
