@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 
 from base.models import Product
-from base.serializer import ProductSerializer
+from base.serializers import ProductSerializer
 
 from rest_framework import status
 
