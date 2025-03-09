@@ -608,6 +608,10 @@ export const login = (email, password) => async (dispatch) => {
 
 - **OrderScreen Enhancements:** Added user name and email in the Shipping section and included status messages for delivery and payment in OrderScreen.
 
+## Recent Updates
+
+- **Order Endpoints and OrderScreen Integration:** Updated backend order URL patterns and views for improved error handling and status updates, and enhanced the OrderScreen component to display user shipping details and payment/delivery statuses.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
