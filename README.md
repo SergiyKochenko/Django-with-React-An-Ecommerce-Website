@@ -602,6 +602,8 @@ export const login = (email, password) => async (dispatch) => {
 - **Fixed State Mutation in PlaceOrderScreen:**
   - Updated the `PlaceOrderScreen` component to calculate `itemsPrice`, `shippingPrice`, `taxPrice`, and `totalPrice` without directly mutating the Redux store's state. This fix ensures that the state is not mutated directly, preventing the uncaught runtime error.
 
+- **Last Job Done:** Streamlined navigation and state management by updating routing to use react-router-dom v6 hooks, refining Redux store initialization with local storage preloading, and enhancing error/loading states in authentication.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
