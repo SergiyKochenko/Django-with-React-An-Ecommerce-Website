@@ -627,8 +627,6 @@ export const login = (email, password) => async (dispatch) => {
 - Added "Powered by PayPal" logo under the Debit or Credit Card button.
 - Updated order actions, reducers, and store configuration to handle order creation, details, and payment flows.
 - Ensured proper state management and error handling for PayPal SDK loading.
-
-## Recent Work
 - **Added User List Reducer, Action & Screen:** Implemented user list management for administrators to view and manage registered users.
 
 ## Learn More
