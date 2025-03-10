@@ -629,6 +629,14 @@ export const login = (email, password) => async (dispatch) => {
 - Ensured proper state management and error handling for PayPal SDK loading.
 - **Added User List Reducer, Action & Screen:** Implemented user list management for administrators to view and manage registered users.
 
+## Recent Job Done
+
+- **User Management Enhancements:**
+  - Added user list management for administrators to view and manage registered users.
+  - Integrated user deletion functionality in the UserListScreen component.
+  - Updated user actions and reducers to handle user deletion.
+  - Ensured proper state management and error handling for user-related actions.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
