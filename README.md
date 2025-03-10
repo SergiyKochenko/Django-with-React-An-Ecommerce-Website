@@ -617,6 +617,7 @@ export const login = (email, password) => async (dispatch) => {
 - Added "Powered by PayPal" logo under the Debit or Credit Card button.
 - Updated order actions, reducers, and store configuration to handle order creation, details, and payment flows.
 - Ensured proper state management and error handling for PayPal SDK loading.
+- **Orders in Profile Page:** The ProfileScreen now displays a list of user orders with details (order ID, date, total, and status for payment and delivery).
 
 ## Recent Work
 - Updated order actions to handle create, details, and payment flows.
