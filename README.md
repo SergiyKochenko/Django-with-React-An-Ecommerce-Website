@@ -632,10 +632,10 @@ export const login = (email, password) => async (dispatch) => {
 ## Recent Job Done
 
 - **User Management Enhancements:**
+  - Fixed runtime error in EditUserScreen by switching from the deprecated match prop to useParams for extracting the user ID.
   - Added user list management for administrators to view and manage registered users.
   - Integrated user deletion functionality in the UserListScreen component.
-  - Updated user actions and reducers to handle user deletion.
-  - Ensured proper state management and error handling for user-related actions.
+  - Updated user actions and reducers to handle user deletion with improved error handling.
 
 ## Learn More
 
