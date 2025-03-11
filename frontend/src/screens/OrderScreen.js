@@ -83,7 +83,7 @@ function OrderScreen() {
               </p>
               <p>
                 <strong>Email: </strong>
-                <a href={`mailto:${order.user.email}`} style={{ color: 'blue' }}>
+                <a href={`mailto:${order.user.email}`} className='cart-link' style={{ color: 'blue' }}>
                   {order.user.email}
                 </a>
               </p>
@@ -133,7 +133,7 @@ function OrderScreen() {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link to={`/product/${item.product}`} className='cart-link' style={{ color: 'blue' }}>
                             {item.name}
                           </Link>
                         </Col>
