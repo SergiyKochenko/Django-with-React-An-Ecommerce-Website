@@ -638,6 +638,10 @@ export const login = (email, password) => async (dispatch) => {
   - Updated user actions and reducers to handle user deletion with improved error handling.
   - Fixed duplicate conditional block in EditUserScreen's useEffect to ensure user details are fetched and set correctly.
 
+- **Product Management Enhancements:**
+  - Added product deletion functionality for administrators in the ProductListScreen component.
+  - Updated product actions and reducers to handle product deletion with proper state management.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
