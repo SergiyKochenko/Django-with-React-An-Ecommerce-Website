@@ -636,6 +636,7 @@ export const login = (email, password) => async (dispatch) => {
   - Added user list management for administrators to view and manage registered users.
   - Integrated user deletion functionality in the UserListScreen component.
   - Updated user actions and reducers to handle user deletion with improved error handling.
+  - Fixed duplicate conditional block in EditUserScreen's useEffect to ensure user details are fetched and set correctly.
 
 ## Learn More
 
