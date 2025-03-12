@@ -629,6 +629,8 @@ export const login = (email, password) => async (dispatch) => {
 
 - Fixed updateProduct API endpoint in Django backend to correctly use data.get("name") instead of data.get["name"]
 
+- Added image upload functionality in ProductEditScreen with a Browse button, enabling users to select and upload product images via a dedicated uploadFileHandler.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
