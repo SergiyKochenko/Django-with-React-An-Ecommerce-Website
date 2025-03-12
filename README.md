@@ -627,6 +627,8 @@ export const login = (email, password) => async (dispatch) => {
   - Updated product actions and reducers to handle product creation and update with proper state management.
   - Fixed runtime error in ProductEditScreen by correctly using the useParams hook to get the product ID from the URL parameters.
 
+- Fixed updateProduct API endpoint in Django backend to correctly use data.get("name") instead of data.get["name"]
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
