@@ -641,6 +641,8 @@ export const login = (email, password) => async (dispatch) => {
 - **Product Management Enhancements:**
   - Added product deletion functionality for administrators in the ProductListScreen component.
   - Updated product actions and reducers to handle product deletion with proper state management.
+  - Added product creation and update functionality for administrators in the ProductListScreen component.
+  - Updated product actions and reducers to handle product creation and update with proper state management.
 
 ## Learn More
 
