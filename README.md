@@ -525,7 +525,6 @@ export const login = (email, password) => async (dispatch) => {
 - Updated the README file to include recent updates and improvements made to the project.
 
 ```markdown
-## Recent Updates
 
 ### Fixed Navigation Error in LoginScreen
 
@@ -540,8 +539,6 @@ export const login = (email, password) => async (dispatch) => {
 - Updated the `login` action in `userActions.js` to handle user login and store user information in local storage.
 ```
 
-## Recent Updates
-
 - Updated the Header component to display a user dropdown with **Profile** and **Logout** options.
 - Integrated logout functionality using Redux dispatch.
 - Adjusted the routing implementation to be compatible with react-router-dom v6.
@@ -554,8 +551,6 @@ export const login = (email, password) => async (dispatch) => {
 - **Updated ProfileScreen:**  
   • Integrated the update profile action so that when a user updates their details (name, email, password) the  profile is refreshed.  
   • Implemented a reset (`USER_UPDATE_PROFILE_RESET`) after a successful update
-
-## Recent Updates
 
 - **Fixed Navigation Errors:**
   - Replaced deprecated usage of `history` with `useNavigate` in components such as ProductScreen and LoginScreen.
@@ -586,8 +581,6 @@ export const login = (email, password) => async (dispatch) => {
 - **General Routing & State Management Updates:**  
   Updated navigation functions to use `useNavigate` from React Router v6, and refined Redux integration across authentication and profile update flows.
 
-## Recent Updates
-
 - **Cart Reducer State Mutation Fix:**  
   Updated the cart reducer to avoid direct state mutations. Now, when items are added or removed, the state is updated immutably and derived values (e.g., itemsPrice) are computed from a new array, ensuring correct behavior and adherence to Redux best practices.
 
@@ -597,29 +590,20 @@ export const login = (email, password) => async (dispatch) => {
 - **CheckoutSteps Component Update:**  
   Replaced usage of `LinkContainer` with React Bootstrap's `Nav.Link as={Link}` to ensure correct navigation within the app's single Router context.
 
-## Recent Updates
-
 - **Fixed State Mutation in PlaceOrderScreen:**
   - Updated the `PlaceOrderScreen` component to calculate `itemsPrice`, `shippingPrice`, `taxPrice`, and `totalPrice` without directly mutating the Redux store's state. This fix ensures that the state is not mutated directly, preventing the uncaught runtime error.
 
 - **Last Job Done:** Streamlined navigation and state management by updating routing to use react-router-dom v6 hooks, refining Redux store initialization with local storage preloading, and enhancing error/loading states in authentication.
 
-## Recent Updates
-
 - **OrderScreen Enhancements:** Added user name and email in the Shipping section and included status messages for delivery and payment in OrderScreen.
-
-## Recent Updates
 
 - **Order Endpoints and OrderScreen Integration:** Updated backend order URL patterns and views for improved error handling and status updates, and enhanced the OrderScreen component to display user shipping details and payment/delivery statuses.
 
-## Recent Work
 - Integrated PayPal payment buttons into the OrderScreen component.
 - Added "Powered by PayPal" logo under the Debit or Credit Card button.
 - Updated order actions, reducers, and store configuration to handle order creation, details, and payment flows.
 - Ensured proper state management and error handling for PayPal SDK loading.
 - **Orders in Profile Page:** The ProfileScreen now displays a list of user orders with details (order ID, date, total, and status for payment and delivery).
-
-## Recent Work
 - Updated order actions to handle create, details, and payment flows.
 - Modified order reducers to process order creation, details, and payment states.
 - Integrated order reducers into the Redux store configuration.
@@ -628,9 +612,7 @@ export const login = (email, password) => async (dispatch) => {
 - Updated order actions, reducers, and store configuration to handle order creation, details, and payment flows.
 - Ensured proper state management and error handling for PayPal SDK loading.
 - **Added User List Reducer, Action & Screen:** Implemented user list management for administrators to view and manage registered users.
-
-## Recent Job Done
-
+  
 - **User Management Enhancements:**
   - Fixed runtime error in EditUserScreen by switching from the deprecated match prop to useParams for extracting the user ID.
   - Added user list management for administrators to view and manage registered users.
