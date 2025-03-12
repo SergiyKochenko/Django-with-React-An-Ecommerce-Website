@@ -625,6 +625,7 @@ export const login = (email, password) => async (dispatch) => {
   - Updated product actions and reducers to handle product deletion with proper state management.
   - Added product creation and update functionality for administrators in the ProductListScreen component.
   - Updated product actions and reducers to handle product creation and update with proper state management.
+  - Fixed runtime error in ProductEditScreen by correctly using the useParams hook to get the product ID from the URL parameters.
 
 ## Learn More
 
