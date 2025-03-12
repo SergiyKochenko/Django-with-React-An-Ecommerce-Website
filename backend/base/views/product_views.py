@@ -47,12 +47,12 @@ def updateProduct(request, pk):
     data = request.data
     product = Product.objects.get(_id=pk)
 
-    product.name = data.get["name"]
-    product.price = data.get["price"]
-    product.brand = data.get["brand"]
-    product.countInStock = data.get["countInStock"]
-    product.category = data.get["category"]
-    product.description = data.get["description"]
+    product.name = data.get("name")
+    product.price = data.get("price")
+    product.brand = data.get("brand")
+    product.countInStock = data.get("countInStock")
+    product.category = data.get("category")
+    product.description = data.get("description")
 
     product.save()
 
