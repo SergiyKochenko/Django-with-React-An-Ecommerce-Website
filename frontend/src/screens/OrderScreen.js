@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Link, useParams } from 'react-router-dom'
-import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   PayPalScriptProvider,
@@ -10,29 +11,35 @@ import {
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { getOrderDetails, payOrder } from '../actions/orderActions'
-import { ORDER_PAY_RESET } from '../constants/orderConstants'
+import { getOrderDetails, payOrder, deliverOrder } from '../actions/orderActions'
+import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../constants/orderConstants'
 
 function OrderScreen() {
+  const navigate = useNavigate()
   const { id: orderId } = useParams()
   const dispatch = useDispatch()
 
   const [sdkReady, setSdkReady] = useState(false)
 
-  // Get order details from Redux
+
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
 
-  // Get order payment info from Redux
+
   const orderPay = useSelector((state) => state.orderPay)
   const { loading: loadingPay, success: successPay } = orderPay
 
-  // Compute items price locally without mutating Redux state
+  const orderDeliver = useSelector((state) => state.orderDeliver)
+  const { loading: loadingDeliver, success: successDeliver } = orderDeliver
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
   const computedItemsPrice = (!loading && !error && order)
     ? order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
     : "0.00"
 
-  // Dynamically add PayPal script if not already loaded
+
   const addPayPalScript = () => {
     const script = document.createElement('script')
     script.type = 'text/javascript'
@@ -46,10 +53,15 @@ function OrderScreen() {
     document.body.appendChild(script)
   }
 
-  // Fetch order details, reset payment state, etc.
+
   useEffect(() => {
-    if (!order || successPay || order._id !== Number(orderId)) {
+    if(!userInfo) {
+      navigate('/login')
+    }
+
+    if (!order || successPay || order._id !== Number(orderId) || successDeliver) {
       dispatch({ type: ORDER_PAY_RESET })
+      dispatch({ type: ORDER_DELIVER_RESET })
       dispatch(getOrderDetails(orderId))
     } else if (!order.isPaid) {
       if (!window.paypal) {
@@ -58,11 +70,15 @@ function OrderScreen() {
         setSdkReady(true)
       }
     }
-  }, [dispatch, order, orderId, successPay])
+  }, [dispatch, order, orderId, successPay, successDeliver])
 
-  // Handler for successful payment capture
+
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderId, paymentResult))
+  }
+
+  const deliverHandler = () => {
+    dispatch(deliverOrder(order))
   }
 
   return loading ? (
@@ -271,6 +287,21 @@ function OrderScreen() {
                 </ListGroup.Item>
               )}
             </ListGroup>
+            {loadingDeliver && <Loader />}
+            {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+              <ListGroup.Item className="px-3">
+              <Button
+                type="button"
+                className="btn btn-dark w-100 py-2 my-3"
+                onClick={deliverHandler}
+              >
+                MARK AS DELIVER
+              </Button>
+            </ListGroup.Item>
+            
+            
+            
+            )}
           </Card>
         </Col>
       </Row>

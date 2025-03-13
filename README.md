@@ -631,6 +631,8 @@ export const login = (email, password) => async (dispatch) => {
 
 - Added image upload functionality in ProductEditScreen with a Browse button, enabling users to select and upload product images via a dedicated uploadFileHandler.
 
+- Enhanced image upload in ProductEditScreen: Now supports multipart/form-data uploads with a Browse button that appends the product_id, allowing the Django backend to update the product image accordingly.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
