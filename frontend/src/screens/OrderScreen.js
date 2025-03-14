@@ -298,9 +298,6 @@ function OrderScreen() {
                 MARK AS DELIVER
               </Button>
             </ListGroup.Item>
-            
-            
-            
             )}
           </Card>
         </Col>

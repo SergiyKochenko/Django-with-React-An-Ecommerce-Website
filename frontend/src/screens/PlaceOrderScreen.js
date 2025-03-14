@@ -32,7 +32,7 @@ function PlaceOrderScreen() {
             navigate(`/order/${order._id}`)
             dispatch({ type: ORDER_CREATE_RESET })
         }
-    }, [navigate, success])
+    }, [navigate, success, order, dispatch])
 
     const placeOrder = () => {
         dispatch(createOrder({
@@ -149,10 +149,10 @@ function PlaceOrderScreen() {
                                 {error && <Message variant='danger'>{error}</Message>}
                             </ListGroup.Item>
 
-                            <ListGroup.Item>
+                            <ListGroup.Item className="px-3">
                                 <Button
                                     type='button'
-                                    className='btn-block'
+                                    className="btn btn-dark w-100 py-2 my-3"
                                     disabled={cart.cartItems.length === 0}
                                     onClick={placeOrder}
                                 >

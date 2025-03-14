@@ -36,7 +36,7 @@ function CartScreen() {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message variant='info'>
-            Your cart is empty <Link to="/">Go Back</Link>
+            Your cart is empty <Link to="/" >Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
@@ -84,10 +84,10 @@ function CartScreen() {
               <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h2>
               ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
             </ListGroup.Item>
-            <ListGroup.Item>
+            <ListGroup.Item className="d-grid">
               <Button 
                 type='button' 
-                className='btn-block' 
+                className="btn btn-dark w-100 py-2 my-3" 
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler} >
                 Proceed To Checkout
@@ -102,3 +102,4 @@ function CartScreen() {
 }
 
 export default CartScreen
+

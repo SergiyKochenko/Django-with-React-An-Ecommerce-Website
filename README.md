@@ -633,6 +633,10 @@ export const login = (email, password) => async (dispatch) => {
 
 - Enhanced image upload in ProductEditScreen: Now supports multipart/form-data uploads with a Browse button that appends the product_id, allowing the Django backend to update the product image accordingly.
 
+- **Updated README Documentation:**
+  - Streamlined update logs for clarity.
+  - Added details on order flow enhancements, PayPal integration, and user authentication improvements.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
