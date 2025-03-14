@@ -646,6 +646,8 @@ export const login = (email, password) => async (dispatch) => {
   - Updated `order_views.py` to include views for order management.
   - Enhanced `OrderScreen.js` to display order details, handle payments with PayPal, and mark orders as delivered.
   - Fixed `product_views.py` to ensure proper handling of product reviews and image uploads.
+  - Updated `SearchBox.js` to correctly handle navigation and access the current location.
+  - Updated `HomeScreen.js` to correctly handle navigation and access the current location.
   - Streamlined update logs for clarity.
   - Added details on order flow enhancements, PayPal integration, and user authentication improvements.
 
