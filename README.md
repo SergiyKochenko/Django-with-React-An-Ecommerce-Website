@@ -651,6 +651,11 @@ export const login = (email, password) => async (dispatch) => {
   - Streamlined update logs for clarity.
   - Added details on order flow enhancements, PayPal integration, and user authentication improvements.
 
+- **Search Box Enhancement:**
+  - Implemented auto-navigation in `SearchBox.js` using `useEffect` to update results dynamically as the user types.
+  - Modified `getProducts` view in `product_views.py` to filter products based on the search query.
+  - Updated `HomeScreen.js` to pass the keyword to the `listProducts` action.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
