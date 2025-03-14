@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function SearchBox() {
     const [keyword, setKeyword] = useState('');
-    let navigate = useNavigate();
-    let location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const submitHandler = (e) => {
-        e.preventDefault();
+    useEffect(() => {
         if (keyword) {
             navigate(`/?keyword=${keyword}`);
         } else {
             navigate(location.pathname);
         }
+    }, [keyword, navigate, location.pathname]);
+
+    const submitHandler = (e) => {
+        e.preventDefault();
     };
 
     return (
