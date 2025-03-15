@@ -673,6 +673,18 @@ The Product Carousel component now uses custom styling. The carousel items have 
 - Captions are positioned at the top of the carousel.
 - Responsive adjustments are applied when the viewport width is under 900px.
 
+## Merging React Files With Django Project
+
+To integrate the React frontend with the Django backend:
+1. Build the React app:
+   ```bash
+   cd frontend
+   npm run build
+   ```
+2. Copy or move the generated build folder to Django's static files directory (e.g., `backend/static`), or configure Django to include the frontend build directory in `STATICFILES_DIRS` in `backend/settings.py`.
+3. Update Django templates to load the React app's index.html as the entry point.
+4. During development, you can run the React development server and Django server concurrently.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
