@@ -666,6 +666,13 @@ export const login = (email, password) => async (dispatch) => {
   - Updated order actions, reducers, and constants to handle order creation, details, payment, and delivery flows.
   - Updated backend order URL patterns and views for improved error handling and status updates.
 
+## Product Carousel Update
+
+The Product Carousel component now uses custom styling. The carousel items have updated image styles and captions:
+- Images are displayed as block elements with a height of 300px, a padding of 30px, a margin of 40px, and a border-radius of 35%.
+- Captions are positioned at the top of the carousel.
+- Responsive adjustments are applied when the viewport width is under 900px.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
