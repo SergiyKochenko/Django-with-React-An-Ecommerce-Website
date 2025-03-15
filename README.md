@@ -696,3 +696,11 @@ To learn more about the technologies used in this project, check out the followi
 ## License
 
 This project is licensed under the MIT License.
+
+## Fix Updates
+
+- Modified the Header component to use "ms-auto" for proper right alignment of navigation items.
+
+## Fix Frontend Routing
+
+- The React application now uses HashRouter. As a result, the URL will include a hash (e.g., http://localhost:3000/#/).
