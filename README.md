@@ -656,6 +656,16 @@ export const login = (email, password) => async (dispatch) => {
   - Modified `getProducts` view in `product_views.py` to filter products based on the search query.
   - Updated `HomeScreen.js` to pass the keyword to the `listProducts` action.
 
+- **Pagination and Search Enhancements:**
+  - Updated `Paginate.js` to ensure pagination buttons are styled correctly with active state.
+  - Updated `SearchBox.js` to ensure the search button is active and triggers the search functionality correctly.
+  - Modified `getProducts` view in `product_views.py` to handle pagination and filtering based on the search query.
+  - Updated `HomeScreen.js` to correctly handle pagination and pass the keyword to the `listProducts` action.
+  - Updated `OrderScreen.js` to integrate PayPal payment buttons and handle order details, payment, and delivery.
+  - Updated Redux store configuration in `store.js` to include order reducers and preloaded state from local storage.
+  - Updated order actions, reducers, and constants to handle order creation, details, payment, and delivery flows.
+  - Updated backend order URL patterns and views for improved error handling and status updates.
+
 ## Learn More
 
 To learn more about the technologies used in this project, check out the following resources:
