@@ -5,18 +5,18 @@ import { useLocation } from 'react-router-dom'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import Paginate from '../components/Paginate'
 import { listProducts } from '../actions/productActions'
 
 function HomeScreen() {
   const dispatch = useDispatch()
   const productList = useSelector((state) => state.productList)
-  const { error, loading, products } = productList
+  const { error, loading, products, page, pages } = productList
 
   let location = useLocation()
   let keyword = location.search
 
   useEffect(() => {
-    console.log(keyword)
     dispatch(listProducts(keyword))
   }, [dispatch, keyword])
 
@@ -30,6 +30,7 @@ function HomeScreen() {
              {error}
            </Message>
            ) : (
+            <div>
            <Row>
              {products.map((product) => (
                 <Col
@@ -42,6 +43,8 @@ function HomeScreen() {
                 </Col>
               ))}
            </Row>
+            <Paginate pages={pages} page={page} keyword={keyword} />
+           </div>
            )}
     </div>
   )

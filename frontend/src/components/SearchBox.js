@@ -9,7 +9,7 @@ function SearchBox() {
 
     useEffect(() => {
         if (keyword) {
-            navigate(`/?keyword=${keyword}`);
+            navigate(`/?keyword=${keyword}&page=1`);
         } else {
             navigate(location.pathname);
         }
@@ -17,6 +17,11 @@ function SearchBox() {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        if (keyword) {
+            navigate(`/?keyword=${keyword}&page=1`);
+        } else {
+            navigate(location.pathname);
+        }
     };
 
     return (
@@ -28,7 +33,11 @@ function SearchBox() {
                 placeholder="Search Products..."
                 className="me-2"
             />
-            <Button type="submit" variant="outline-success">
+            <Button 
+                type="submit" 
+                variant="outline-success"
+                onClick={submitHandler}
+            >
                 Search
             </Button>
         </Form>
