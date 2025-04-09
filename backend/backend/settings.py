@@ -179,7 +179,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 MEDIA_ROOT = BASE_DIR / "static/images"
-STATIC_ROOT = BASE_DIR / "staricfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Corrected typo from "staricfiles"
 
 # AWS S3 configuration
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
