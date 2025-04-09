@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +23,12 @@ import os
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-yh-dc)7#t%^uwfcw(1ge$y*1$zal@_2!zga3ekrjt8mb(74du#"
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'my-web-shop-51d10344cd9b.herokuapp.com']
 
 
 # Application definition
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
+    "storages",
     "base.apps.BaseConfig",
 ]
 
@@ -86,6 +88,8 @@ SIMPLE_JWT = {
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -123,10 +127,21 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'My-Web-Shop',
+        "USER": 'agency_l47q_user',
+        "PASSWORD": config('DB_PASSWORD'),
+        "HOST": 'dpg-cvfj0s1opnds73batjl0-a.ohio-postgres.render.com',
+        "PORT": '5432',
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 
 # Password validation
@@ -163,19 +178,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "/static/"
+MEDIA_ROOT = BASE_DIR / "static/images"
+STATIC_ROOT = BASE_DIR / "staricfiles"
+
+# AWS S3 configuration
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'proshop-bucket-my-demo'
+AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+AWS_QUERYSTRING_AUTH = False
+
+STATIC_URL = '/static/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / "frontend/build/static",
+    BASE_DIR / 'static',
+    BASE_DIR / 'frontend/build/static'
 ]
 
-MEDIA_URL = "/images/"
-MEDIA_ROOT = BASE_DIR / "static/images"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 CORS_ALLOW_ALL_ORIGINS = True
+
+if os.getcwd() == '/app':
+    DEBUG = False
+
+
