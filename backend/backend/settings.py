@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'my-web-shop-51d10344cd9b.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'my-demo-webshop-557a5897fe4f.herokuapp.com']
 
 
 # Application definition
